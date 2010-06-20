@@ -22,13 +22,24 @@ $authorNote =<<<NOTE
  * URL: http://www.stepanov.lv
  *
  * Publicly available for non-commercial use under GPL v2 license terms.
+ *
+ * Includes File-Uploader - Evolver's file uploading script.
+ * http://github.com/Evolver/File-Uploader
+ *
+ * Copyright (C) 2010 Dmitry Stepanov <dmitrij@stepanov.lv>
+ * URL: http://www.stepanov.lv
+ *
+ * Publicly available for non-commercial use under GPL v2 license terms.
  */
 
 NOTE;
 
-file_put_contents( __DIR__ .'/evolib.controls.js',
+file_put_contents( __DIR__ .'/evolib.uploader.js',
 	$authorNote .
-  lib_file( 'uploader.Uploader.js') ."\n\n" .
+	lib_file( 'fileUploader/fileUploader.dependency.js') ."\n\n" .
+	lib_file( 'fileUploader/fileUploader.core.js') ."\n\n" .
+	lib_file( 'fileUploader/fileUploader.Uploader.js') ."\n\n" .
+  lib_file( 'fileUploader/fileUploader.evolib.js') ."\n\n" .
   lib_file( 'uploader.js')
 );
 
